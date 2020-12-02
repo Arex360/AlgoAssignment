@@ -1,9 +1,9 @@
 using System;
-using System.Collections;
+using System.Collections.Generic;
 
 namespace Sorting {
     public class QuickSort{
-        private static int Divide(int[] arr, int low, int high){
+        private static int Divide(List<int> arr, int low, int high){
             int pivot = arr[high];
             int i = (low -1);
             for(int j = low; j < high;j++){
@@ -19,7 +19,7 @@ namespace Sorting {
             arr[high] = temp1;
             return i+1;
         }
-        public static void Sort(int[] arr, int low , int high){
+        public static void Sort(List<int> arr, int low , int high){
             if(low < high){
                 int pi = Divide(arr,low,high);
                 Sort(arr,low,pi-1);
